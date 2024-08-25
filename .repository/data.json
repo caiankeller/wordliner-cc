@@ -1,0 +1,352 @@
+[
+  {
+    "id": "1",
+    "title": "Charming Apartment in Montmartre",
+    "address": "Rue des Martyrs, Paris",
+    "description": "A cozy studio apartment with a view of the Sacré-Cœur.",
+    "type_of_contract": "renting",
+    "status": "available",
+    "hidden": false,
+    "price": 1200
+  },
+  {
+    "id": "2",
+    "title": "Luxurious Penthouse in the Marais",
+    "address": "Place des Vosges, Paris",
+    "description": "A spacious penthouse with a rooftop terrace overlooking the city.",
+    "type_of_contract": "selling",
+    "status": "available",
+    "hidden": false,
+    "price": 5000000
+  },
+  {
+    "id": "3",
+    "title": "Historic Chateau in the Loire Valley",
+    "address": "Amboise, Loire Valley",
+    "description": "A stunning chateau with a large garden and swimming pool.",
+    "type_of_contract": "selling",
+    "status": "sold",
+    "hidden": false,
+    "price": 2000000
+  },
+  {
+    "id": "4",
+    "title": "Modern Villa in Nice",
+    "address": "Promenade des Anglais, Nice",
+    "description": "A beachfront villa with panoramic ocean views.",
+    "type_of_contract": "renting",
+    "status": "occupied",
+    "hidden": false,
+    "price": 5000
+  },
+  {
+    "id": "5",
+    "title": "Cozy Cottage in Provence",
+    "address": "Luberon, Provence",
+    "description": "A charming cottage with a lavender field and olive trees.",
+    "type_of_contract": "selling",
+    "status": "available",
+    "hidden": false,
+    "price": 750000
+  },
+  {
+    "id": "6",
+    "title": "Stylish Apartment in Bordeaux",
+    "address": "Place de la Bourse, Bordeaux",
+    "description": "A modern apartment with a balcony overlooking the Garonne River.",
+    "type_of_contract": "renting",
+    "status": "available",
+    "hidden": false,
+    "price": 1000
+  },
+  {
+    "id": "7",
+    "title": "Mountain Chalet in the Alps",
+    "address": "Chamonix, Alps",
+    "description": "A cozy chalet with a fireplace and ski slopes nearby.",
+    "type_of_contract": "renting",
+    "status": "available",
+    "hidden": false,
+    "price": 2000
+  },
+  {
+    "id": "8",
+    "title": "Beachfront Bungalow in Biarritz",
+    "address": "Côte des Basques, Biarritz",
+    "description": "A charming bungalow with direct access to the beach.",
+    "type_of_contract": "selling",
+    "status": "sold",
+    "hidden": false,
+    "price": 1500000
+  },
+  {
+    "id": "9",
+    "title": "Historic Apartment in Lyon",
+    "address": "Vieux Lyon, Lyon",
+    "description": "A beautifully restored apartment in the old town.",
+    "type_of_contract": "renting",
+    "status": "occupied",
+    "hidden": false,
+    "price": 1500
+  },
+  {
+    "id": "10",
+    "title": "Vineyard Estate in Burgundy",
+    "address": "Beaune, Burgundy",
+    "description": "A stunning vineyard estate with a winery and tasting room.",
+    "type_of_contract": "selling",
+    "status": "available",
+    "hidden": false,
+    "price": 5000000
+  },
+  {
+    "id": "11",
+    "title": "Modern Apartment in Marseille",
+    "address": "Corniche Kennedy, Marseille",
+    "description": "A stylish apartment with sea views and a rooftop pool.",
+    "type_of_contract": "renting",
+    "status": "available",
+    "hidden": false,
+    "price": 1800
+  },
+  {
+    "id": "12",
+    "title": "Country Farmhouse in Brittany",
+    "address": "Finistère, Brittany",
+    "description": "A charming farmhouse with a garden and orchard.",
+    "type_of_contract": "selling",
+    "status": "sold",
+    "hidden": false,
+    "price": 800000
+  },
+  {
+    "id": "13",
+    "title": "Luxury Villa in Cannes",
+    "address": "La Croisette, Cannes",
+    "description": "A beachfront villa with a private pool and jacuzzi.",
+    "type_of_contract": "renting",
+    "status": "occupied",
+    "hidden": false,
+    "price": 10000
+  },
+  {
+    "id": "14",
+    "title": "Historic Chateau in Normandy",
+    "address": "Mont Saint-Michel, Normandy",
+    "description": "A stunning chateau with a panoramic view of the bay.",
+    "type_of_contract": "selling",
+    "status": "available",
+    "hidden": false,
+    "price": 3000000
+  },
+  {
+    "id": "15",
+    "title": "Cozy Apartment in Toulouse",
+    "address": "Capitole, Toulouse",
+    "description": "A charming apartment with a balcony overlooking the square.",
+    "type_of_contract": "renting",
+    "status": "available",
+    "hidden": false,
+    "price": 900
+  },
+  {
+    "id": "16",
+    "title": "Cozy Cottage in the Cotswolds",
+    "address": "1 Willow Lane, Chipping Campden, England",
+    "description": "A charming stone cottage with a cozy fireplace and a garden overlooking the countryside.",
+    "type_of_contract": "renting",
+    "status": "available",
+    "hidden": false,
+    "price": 1500
+  },
+  {
+    "id": "17",
+    "title": "Penthouse Apartment in Dubai",
+    "address": "Burj Khalifa, Dubai, UAE",
+    "description": "A luxurious penthouse with stunning views of the city and the Arabian Gulf.",
+    "type_of_contract": "selling",
+    "status": "available",
+    "hidden": false,
+    "price": 10000000
+  },
+  {
+    "id": "18",
+    "title": "Beachfront Villa in Bali",
+    "address": "Seminyak, Bali, Indonesia",
+    "description": "A modern villa with a private pool and direct access to the beach.",
+    "type_of_contract": "renting",
+    "status": "occupied",
+    "hidden": false,
+    "price": 5000
+  },
+  {
+    "id": "19",
+    "title": "Historic Apartment in Paris",
+    "address": "Rue de Rivoli, Paris, France",
+    "description": "A charming apartment in a historic building with views of the Eiffel Tower.",
+    "type_of_contract": "selling",
+    "status": "sold",
+    "hidden": false,
+    "price": 800000
+  },
+  {
+    "id": "20",
+    "title": "Modern Loft in New York City",
+    "address": "Soho, New York City, USA",
+    "description": "A spacious loft with exposed brick walls and floor-to-ceiling windows.",
+    "type_of_contract": "renting",
+    "status": "available",
+    "hidden": false,
+    "price": 5000
+  },
+  {
+    "id": "21",
+    "title": "Mountain Cabin in Colorado",
+    "address": "Aspen, Colorado, USA",
+    "description": "A cozy cabin nestled in the mountains with breathtaking views.",
+    "type_of_contract": "selling",
+    "status": "available",
+    "hidden": false,
+    "price": 2000000
+  },
+  {
+    "id": "22",
+    "title": "Beachfront Bungalow in Fiji",
+    "address": "Denarau Island, Fiji",
+    "description": "A tropical bungalow with a private beach and crystal-clear waters.",
+    "type_of_contract": "renting",
+    "status": "available",
+    "hidden": false,
+    "price": 3000
+  },
+  {
+    "id": "23",
+    "title": "Historic Mansion in London",
+    "address": "Belgravia, London, England",
+    "description": "A grand mansion with elegant period features and a private garden.",
+    "type_of_contract": "selling",
+    "status": "sold",
+    "hidden": false,
+    "price": 20000000
+  },
+  {
+    "id": "24",
+    "title": "Modern Apartment in Tokyo",
+    "address": "Shibuya, Tokyo, Japan",
+    "description": "A stylish apartment in a modern high-rise building with city views.",
+    "type_of_contract": "renting",
+    "status": "available",
+    "hidden": false,
+    "price": 2500
+  },
+  {
+    "id": "25",
+    "title": "Rural Farmhouse in Tuscany",
+    "address": "Chianti, Tuscany, Italy",
+    "description": "A charming farmhouse with vineyards and olive groves.",
+    "type_of_contract": "selling",
+    "status": "available",
+    "hidden": false,
+    "price": 1500000
+  },
+  {
+    "id": "26",
+    "title": "Beachfront Villa in the Maldives",
+    "address": "Malé, Maldives",
+    "description": "A luxurious villa on a private island with overwater bungalows.",
+    "type_of_contract": "renting",
+    "status": "occupied",
+    "hidden": false,
+    "price": 10000
+  },
+  {
+    "id": "27",
+    "title": "Historic Apartment in Barcelona",
+    "address": "La Rambla, Barcelona, Spain",
+    "description": "A charming apartment with a balcony overlooking the famous street.",
+    "type_of_contract": "selling",
+    "status": "sold",
+    "hidden": false,
+    "price": 700000
+  },
+  {
+    "id": "28",
+    "title": "Modern Penthouse in Sydney",
+    "address": "Darling Harbour, Sydney, Australia",
+    "description": "A luxurious penthouse with panoramic views of the city and harbor.",
+    "type_of_contract": "renting",
+    "status": "available",
+    "hidden": false,
+    "price": 5000
+  },
+  {
+    "id": "29",
+    "title": "Rural Cottage in Ireland",
+    "address": "County Kerry, Ireland",
+    "description": "A cozy cottage with a fireplace and a garden overlooking the countryside.",
+    "type_of_contract": "selling",
+    "status": "available",
+    "hidden": false,
+    "price": 300000
+  },
+  {
+    "id": "30",
+    "title": "Modern Apartment in Dubai",
+    "address": "Downtown Dubai, Dubai, UAE",
+    "description": "A stylish apartment in a modern high-rise building with city views.",
+    "type_of_contract": "renting",
+    "status": "available",
+    "hidden": false,
+    "price": 3000
+  },
+  {
+    "id": "31",
+    "title": "Beachfront Bungalow in Thailand",
+    "address": "Phuket, Thailand",
+    "description": "A tropical bungalow with a private pool and direct access to the beach.",
+    "type_of_contract": "renting",
+    "status": "occupied",
+    "hidden": false,
+    "price": 2000
+  },
+  {
+    "id": "32",
+    "title": "Historic Mansion in Rome",
+    "address": "Piazza Navona, Rome, Italy",
+    "description": "A grand mansion with elegant period features and a private garden.",
+    "type_of_contract": "selling",
+    "status": "sold",
+    "hidden": false,
+    "price": 15000000
+  },
+  {
+    "id": "33",
+    "title": "Modern Apartment in Hong Kong",
+    "address": "Central, Hong Kong",
+    "description": "A stylish apartment in a modern high-rise building with city views.",
+    "type_of_contract": "renting",
+    "status": "available",
+    "hidden": false,
+    "price": 3500
+  },
+  {
+    "id": "34",
+    "title": "Rural Farmhouse in Provence",
+    "address": "Luberon, Provence, France",
+    "description": "A charming farmhouse with vineyards and lavender fields.",
+    "type_of_contract": "selling",
+    "status": "available",
+    "hidden": false,
+    "price": 2000000
+  },
+  {
+    "id": "35",
+    "title": "Beachfront Villa in Mauritius",
+    "address": "Grand Baie, Mauritius",
+    "description": "A luxurious villa with a private pool and direct access to the beach.",
+    "type_of_contract": "renting",
+    "status": "occupied",
+    "hidden": false,
+    "price": 5000
+  }
+]

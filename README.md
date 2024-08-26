@@ -1,4 +1,4 @@
-# **[wordliner GmbH](https://wordliner.com) - Code Challange**
+# **[wordliner](https://wordliner.com) - Code Challange**
 
 ![immobilienbranche](./.repository/immobilienbranche.png)
 
@@ -7,7 +7,7 @@
 To install the project, follow these steps:
 
 ```
-git clone https://github.com/caiankeller/wordliner.git wordliner@caiankeller
+git clone https://github.com/caiankeller/wordliner-cc.git wordliner@caiankeller
 ```
 
 ```

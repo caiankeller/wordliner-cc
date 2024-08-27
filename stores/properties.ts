@@ -21,9 +21,7 @@ export const usePropertiesStore = defineStore("properties", () => {
     sortOrder: "asc",
     status: "all",
     currentPage: 1,
-    // pagesize for reference, I don't change this value, it's fixed 9 because different values
-    // can break the line in the grid rendering option, just a detail
-    pageSize: 9,
+    pageSize: 10,
   });
 
   // abstract function for changing pages, quite self-explanatory
@@ -121,7 +119,7 @@ export const usePropertiesStore = defineStore("properties", () => {
   // listens those filters values and update properties
   // if i made a function for each of them, think of the amount of (repeated) code we'd have
   watch(
-    () => [filters.value.sortOrder, filters.value.status, filters.value.sortBy],
+    () => [filters.value.sortOrder, filters.value.status, filters.value.sortBy, filters.value.pageSize],
     () => {
       // resets the current page to 1, which is very important for usability purposes
       // these filters can drastically change the number of results, and with fewer pages, user could be on a

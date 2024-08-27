@@ -11,8 +11,15 @@ const propertiesStore = usePropertiesStore();
 
 <template>
   <div class="flex gap-4 ml-auto items-center">
-    <span class="text-neutral-600 font-medium text-xs">9 items per page</span>
-
+    <!--
+        of course, I could change all that and make the page size never be less than 1, but that's a lot of code for little gain
+        Sometimes we have to make a decision based on user experience. Because it works well the way it is now.
+        Adding too much manipulation can cause us to lose some of the browsers' native features (or vue features), which are REALLY optimised
+        like vmodel.lazy that's being used
+    -->
+    <input maxlength="2" v-model.lazy="propertiesStore.filters.pageSize"
+      class="outline-1 outline text-right py-0.5 outline-neutral-300 focus:outline-neutral-500 px-2 max-w-12 rounded-md" />
+    <span class="text-neutral-600 font-medium text-xs"> items per page</span>
     <div class="flex items-center gap-2">
       <button type="button"
         class="rounded-full p-2 group hover:bg-neutral-200 active:scale-[.97] transition-all disabled:bg-neutral-100"
@@ -34,7 +41,7 @@ const propertiesStore = usePropertiesStore();
       <!-- even with the limitation on pagination with this mocking api service, 
                     if we deactivate the button when there are fewer items per page than returned, 
                     we still have a high chance of presume that there is no next page.
-                    With the current default value of 9, this is 88% of we being correct 😎
+                    With the current default value of 10, this is 88% of we being correct 😎
              -->
       <button type="button"
         class="rounded-full p-2 group hover:bg-neutral-200 active:scale-[.97] transition-all disabled:bg-neutral-100"

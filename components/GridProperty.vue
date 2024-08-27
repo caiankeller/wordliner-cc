@@ -12,7 +12,7 @@ const propertyStore = usePropertyStore();
 </script>
 <template>
   <li
-    class="rounded-xl hover:cursor-pointer space-y-2 p-4 group active:scale-[0.97] hover:shadow-md outline outline-1 outline-neutral-300 hover:outline-neutral-500 lg:col-span-2 md:col-span-3 col-span-6 transition-all"
+    class="rounded-xl hover:cursor-pointer space-y-2 p-4 group active:scale-[0.97] hover:shadow-md outline outline-1 outline-neutral-300 hover:outline-neutral-500 lg:col-span-3 col-span-6 transition-all"
     @click="propertyStore.selectExistingProperty(property.id)">
     <Badge :status="property.status" />
 

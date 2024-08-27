@@ -75,11 +75,11 @@ export const usePropertyStore = defineStore("property", () => {
     }
   };
 
-  // update property hidden state when status changes to sold
+  // update property hidden state when status changes
   watch(
     () => property.value?.status,
     (newStatus) => {
-      if (property.value?.hidden)
+      if (property.value)
         property.value.hidden = newStatus === "available" ? false : true;
     }
   );

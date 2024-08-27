@@ -88,7 +88,7 @@ const TYPE_OF_CONTRACTS: TTypeOfContract[] = ["renting", "selling"];
               </div>
             </label>
           </div>
-          <button type="button" :disabled="propertyStore.fetching"
+          <button type="submit" :disabled="propertyStore.fetching"
             class="bg-indigo-500 text-white active:scale-[.97] transition-all text-sm justify-center items-center font-semibold flex gap-2 py-2 px-4 rounded-md disabled:bg-neutral-400">
             <template v-if="propertyStore.fetching">
               <ArrowPathIcon class="size-4 animate-spin" />Saving

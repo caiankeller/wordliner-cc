@@ -39,13 +39,13 @@ const handleModalClose = () => {
           {{ isDeleting }}
         </p>
         <div class="flex justify-end gap-4 mt-4">
-          <button
+          <button type="button"
             class="text-neutral-800 active:scale-[.97] hover:underline underline-offset-2 transition-all items-center text-sm font-semibold"
             :disabled="isDeleting" @click="handleModalClose">
             Cancel
           </button>
 
-          <button
+          <button type="button"
             class="bg-rose-500 text-white active:scale-[.97] transition-all items-center text-sm font-semibold flex gap-2 py-2 px-4 rounded-full disabled:bg-neutral-400"
             :disabled="isDeleting" @click="handleDelete">
             <template v-if="isDeleting">

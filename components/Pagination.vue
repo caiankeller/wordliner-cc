@@ -14,13 +14,13 @@ const propertiesStore = usePropertiesStore();
     <span class="text-neutral-600 font-medium text-xs">9 items per page</span>
 
     <div class="flex items-center gap-2">
-      <button
+      <button type="button"
         class="rounded-full p-2 group hover:bg-neutral-200 active:scale-[.97] transition-all disabled:bg-neutral-100"
         :disabled="propertiesStore.filters.currentPage === 1" @click="propertiesStore.updateToFirstPage()">
         <BackwardIcon
           class="text-neutral-800 group-hover:text-neutral-950 transition-colors size-4 group-disabled:text-neutral-600" />
       </button>
-      <button
+      <button type="button"
         class="rounded-full p-2 group hover:bg-neutral-200 active:scale-[.97] transition-all disabled:bg-neutral-100"
         :disabled="propertiesStore.filters.currentPage === 1" @click="propertiesStore.updatePage('previous')">
         <!-- I'm actually, pretty proud of this -->
@@ -36,7 +36,7 @@ const propertiesStore = usePropertiesStore();
                     we still have a high chance of presume that there is no next page.
                     With the current default value of 9, this is 88% of we being correct 😎
              -->
-      <button
+      <button type="button"
         class="rounded-full p-2 group hover:bg-neutral-200 active:scale-[.97] transition-all disabled:bg-neutral-100"
         :disabled="propertiesStore.properties.length !== propertiesStore.filters.pageSize
           " @click="propertiesStore.updatePage('next')">

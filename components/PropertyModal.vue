@@ -24,7 +24,7 @@ const TYPE_OF_CONTRACTS: TTypeOfContract[] = ["renting", "selling"];
             <p class="text-neutral-800 font-semibold">
               Property - {{ propertyStore.property.title || "No title" }}
             </p>
-            <button class=" text-neutral-600 hover:text-neutral-900 transition-colors p-1 rounded-full"
+            <button type="button" class=" text-neutral-600 hover:text-neutral-900 transition-colors p-1 rounded-full"
               @click="propertyStore.dismissCurrrentProperty()">
               <XMarkIcon class="size-5" />
             </button>
@@ -88,7 +88,7 @@ const TYPE_OF_CONTRACTS: TTypeOfContract[] = ["renting", "selling"];
               </div>
             </label>
           </div>
-          <button :disabled="propertyStore.fetching"
+          <button type="button" :disabled="propertyStore.fetching"
             class="bg-indigo-500 text-white active:scale-[.97] transition-all text-sm justify-center items-center font-semibold flex gap-2 py-2 px-4 rounded-md disabled:bg-neutral-400">
             <template v-if="propertyStore.fetching">
               <ArrowPathIcon class="size-4 animate-spin" />Saving

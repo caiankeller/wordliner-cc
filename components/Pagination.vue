@@ -10,7 +10,7 @@ const propertiesStore = usePropertiesStore();
     so I did it this way, and that's the best I could do -->
 
 <template>
-  <div class="flex gap-4 ml-auto items-center">
+  <div class="flex gap-2 ml-auto items-center">
     <!--
         of course, I could change all that and make the page size never be less than 1, but that's a lot of code for little gain
         Sometimes we have to make a decision based on user experience. Because it works well the way it is now.
@@ -18,7 +18,7 @@ const propertiesStore = usePropertiesStore();
         like vmodel.lazy that's being used
     -->
     <input maxlength="2" v-model.lazy="propertiesStore.filters.pageSize"
-      class="outline-1 outline text-right py-0.5 outline-neutral-300 focus:outline-neutral-500 px-2 max-w-12 rounded-md" />
+      class="outline-1 outline text-right py-0.5 outline-neutral-300 text-sm focus:outline-neutral-500 px-2 max-w-12 rounded-md" />
     <span class="text-neutral-600 font-medium text-xs"> items per page</span>
     <div class="flex items-center gap-2">
       <button type="button"

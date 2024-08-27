@@ -2,8 +2,9 @@ import debounce from "lodash.debounce";
 import { defineStore } from "pinia";
 import deletePropertyAPI from "services/deletePropertyAPI";
 import getPropertiesAPI from "services/getPropertiesAPI.js";
-import type { IFilters, IProperty } from "types";
+import type { IFilters, IProperty, TStatus } from "types";
 import { computed, ref, watch } from "vue";
+import updatePropertyAPI from "~/services/updatePropertyAPI";
 
 // this store does not handle adding properties; when a property is added, getProperties is triggered again
 // the reason is documented in `propertyStore`
@@ -98,6 +99,26 @@ export const usePropertiesStore = defineStore("properties", () => {
     getProperties();
   };
 
+  const updatePropertiesStatuses = async (
+    status: TStatus,
+    shouldHide: boolean
+  ) => {
+    const updateProperties = [];
+
+    for (const propertyReference of selectedProperties.value) {
+      const property: IProperty = {
+        ...properties.value.find((p) => p.id === propertyReference)!,
+        status,
+        hidden: shouldHide,
+      };
+      updateProperties.push(updatePropertyAPI(property));
+    }
+
+    await Promise.all(updateProperties);
+    selectedProperties.value.clear();
+    getProperties();
+  };
+
   // this code is less verbose, less complicated and you can find everything in one place
   // of course there are many alternatives to this that you can definitely argue and I'd love to hear about it
 
@@ -119,7 +140,12 @@ export const usePropertiesStore = defineStore("properties", () => {
   // listens those filters values and update properties
   // if i made a function for each of them, think of the amount of (repeated) code we'd have
   watch(
-    () => [filters.value.sortOrder, filters.value.status, filters.value.sortBy, filters.value.pageSize],
+    () => [
+      filters.value.sortOrder,
+      filters.value.status,
+      filters.value.sortBy,
+      filters.value.pageSize,
+    ],
     () => {
       // resets the current page to 1, which is very important for usability purposes
       // these filters can drastically change the number of results, and with fewer pages, user could be on a
@@ -141,6 +167,7 @@ export const usePropertiesStore = defineStore("properties", () => {
     updateToFirstPage,
     removeProperties,
     selectedProperties,
+    updatePropertiesStatuses,
     selectAllProperties,
   };
 });

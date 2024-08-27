@@ -36,8 +36,12 @@ const handleModalClose = () => {
         class="bg-white p-4 z-10 max-w-[350px] absolute mx-auto my-auto top-0 left-0 right-0 bottom-0 w-full rounded-xl shadow-lg h-fit">
         <p class="text-neutral-800 font-semibold">
           Are you sure you want to delete?
-          {{ isDeleting }}
         </p>
+        <div class="my-12 text-center">
+          <span class='text-sm font-medium'>
+            {{ propertiesStore.selectedProperties.size }} items selected
+          </span>
+        </div>
         <div class="flex justify-end gap-4 mt-4">
           <button type="button"
             class="text-neutral-800 active:scale-[.97] hover:underline underline-offset-2 transition-all items-center text-sm font-semibold"

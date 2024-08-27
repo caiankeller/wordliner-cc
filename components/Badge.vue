@@ -2,6 +2,8 @@
 import type { TStatus } from "types";
 import { computed } from "vue";
 
+const { status } = defineProps<{ status: TStatus }>();
+
 const getStatusClass = (status: TStatus) => {
   const CLASSES = {
     available:
@@ -14,7 +16,6 @@ const getStatusClass = (status: TStatus) => {
   return CLASSES[status] || "";
 };
 
-const { status } = defineProps<{ status: TStatus }>();
 const statusClass = computed(() => getStatusClass(status));
 </script>
 

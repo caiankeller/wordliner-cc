@@ -13,8 +13,7 @@ const propertyStore = usePropertyStore();
 <template>
   <li
     class="rounded-xl hover:cursor-pointer space-y-2 p-4 group active:scale-[0.97] hover:shadow-md outline outline-1 outline-neutral-300 hover:outline-neutral-500 lg:col-span-2 md:col-span-3 col-span-6 transition-all"
-    @click="propertyStore.selectExistingProperty(property.id)"
-  >
+    @click="propertyStore.selectExistingProperty(property.id)">
     <Badge :status="property.status" />
 
     <div class="flex justify-between">
@@ -26,24 +25,16 @@ const propertyStore = usePropertyStore();
           {{ property.address }}
         </span>
       </div>
-      <span
-        v-if="property.type_of_contract === 'renting'"
-        class="text-xs font-semibold text-neutral-800 mt-auto"
-      >
+      <span v-if="property.type_of_contract === 'renting'" class="text-xs font-semibold text-neutral-800 mt-auto">
         {{ currencyFormat(property.price) }}
         monthly
       </span>
-      <span
-        v-if="property.type_of_contract === 'selling'"
-        class="text-xs font-semibold text-neutral-800 mt-auto"
-      >
+      <span v-if="property.type_of_contract === 'selling'" class="text-xs font-semibold text-neutral-800 mt-auto">
         {{ currencyFormat(property.price) }}
       </span>
     </div>
-    <hr >
-    <span
-      class="text-xs leading-relaxed font-medium text-neutral-700 line-clamp-1"
-    >
+    <hr>
+    <span class="text-xs leading-relaxed font-medium text-neutral-700 line-clamp-1">
       {{ property.description }}
     </span>
   </li>

@@ -2,13 +2,8 @@
 https://dm4t2.github.io/vue-currency-input/guide.html#auto-emit -->
 
 <template>
-  <input
-    ref="inputRef"
-    type="text"
-    inputmode="numeric"
-    required
-    class="outline h-[32px] outline-1 w-full pl-2 text-neutral-800 outline-neutral-300 text-sm p-2 px-4 focus:outline-neutral-400 transition-all ease-out rounded-md"
-  >
+  <input ref="inputRef" type="text" inputmode="numeric" required
+    class="outline h-[32px] outline-1 w-full pl-2 text-neutral-800 outline-neutral-300 text-sm p-2 px-4 focus:outline-neutral-400 transition-all ease-out rounded-md">
 </template>
 
 <script>

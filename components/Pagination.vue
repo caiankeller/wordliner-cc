@@ -16,22 +16,16 @@ const propertiesStore = usePropertiesStore();
     <div class="flex items-center gap-2">
       <button
         class="rounded-full p-2 group hover:bg-neutral-200 active:scale-[.97] transition-all disabled:bg-neutral-100"
-        :disabled="propertiesStore.filters.currentPage === 1"
-        @click="propertiesStore.updateToFirstPage()"
-      >
+        :disabled="propertiesStore.filters.currentPage === 1" @click="propertiesStore.updateToFirstPage()">
         <BackwardIcon
-          class="text-neutral-800 group-hover:text-neutral-950 transition-colors size-4 group-disabled:text-neutral-600"
-        />
+          class="text-neutral-800 group-hover:text-neutral-950 transition-colors size-4 group-disabled:text-neutral-600" />
       </button>
       <button
         class="rounded-full p-2 group hover:bg-neutral-200 active:scale-[.97] transition-all disabled:bg-neutral-100"
-        :disabled="propertiesStore.filters.currentPage === 1"
-        @click="propertiesStore.updatePage('previous')"
-      >
+        :disabled="propertiesStore.filters.currentPage === 1" @click="propertiesStore.updatePage('previous')">
         <!-- I'm actually, pretty proud of this -->
         <PlayIcon
-          class="text-neutral-800 rotate-180 group-hover:text-neutral-950 transition-colors size-4 group-disabled:text-neutral-600"
-        />
+          class="text-neutral-800 rotate-180 group-hover:text-neutral-950 transition-colors size-4 group-disabled:text-neutral-600" />
         <span class="sr-only">Previous page</span>
       </button>
       <span class="text-neutral-700 font-medium text-sm min-w-3 text-center">
@@ -44,14 +38,10 @@ const propertiesStore = usePropertiesStore();
              -->
       <button
         class="rounded-full p-2 group hover:bg-neutral-200 active:scale-[.97] transition-all disabled:bg-neutral-100"
-        :disabled="
-          propertiesStore.properties.length !== propertiesStore.filters.pageSize
-        "
-        @click="propertiesStore.updatePage('next')"
-      >
+        :disabled="propertiesStore.properties.length !== propertiesStore.filters.pageSize
+          " @click="propertiesStore.updatePage('next')">
         <PlayIcon
-          class="text-neutral-800 group-hover:text-neutral-950 transition-colors size-4 group-disabled:text-neutral-600"
-        />
+          class="text-neutral-800 group-hover:text-neutral-950 transition-colors size-4 group-disabled:text-neutral-600" />
         <span class="sr-only">Next page</span>
       </button>
     </div>

@@ -26,24 +26,14 @@ const TABLE_PROPERTIES: (keyof IProperty)[] = [
 </script>
 
 <template>
-  <select
-    v-model="propertiesStore.filters.sortBy"
-    :disabled="propertiesStore.fetching"
-    class="rounded-full py-2 pl-4 pr-2 transition-all text-sm text-neutral-800 hover:cursor-pointer border-r-8 border-transparent bg-white outline outline-1 outline-neutral-300 focus:outline-neutral-500 hover:outline-neutral-500"
-  >
-    <option
-      v-for="tableProperty in TABLE_PROPERTIES"
-      :key="tableProperty"
-      :value="tableProperty"
-    >
+  <select v-model="propertiesStore.filters.sortBy" :disabled="propertiesStore.fetching"
+    class="rounded-full py-2 pl-4 pr-2 transition-all text-sm text-neutral-800 hover:cursor-pointer border-r-8 border-transparent bg-white outline outline-1 outline-neutral-300 focus:outline-neutral-500 hover:outline-neutral-500">
+    <option v-for="tableProperty in TABLE_PROPERTIES" :key="tableProperty" :value="tableProperty">
       {{ tableProperty.replaceAll("_", " ") }}
     </option>
   </select>
-  <select
-    v-model="propertiesStore.filters.sortOrder"
-    :disabled="propertiesStore.fetching"
-    class="rounded-full py-2 pl-4 pr-2 transition-all text-sm text-neutral-800 hover:cursor-pointer border-r-8 border-transparent bg-white outline outline-1 outline-neutral-300 focus:outline-neutral-500 hover:outline-neutral-500"
-  >
+  <select v-model="propertiesStore.filters.sortOrder" :disabled="propertiesStore.fetching"
+    class="rounded-full py-2 pl-4 pr-2 transition-all text-sm text-neutral-800 hover:cursor-pointer border-r-8 border-transparent bg-white outline outline-1 outline-neutral-300 focus:outline-neutral-500 hover:outline-neutral-500">
     <option value="asc">asc</option>
     <option value="desc">desc</option>
   </select>

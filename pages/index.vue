@@ -10,26 +10,27 @@ propertiesStore.getProperties();
 </script>
 
 <template>
-    <div class="container">
-        <h1 class="font-bold text-lg text-neutral-800 tracking-tight">
-            Properties
-        </h1>
-        <Filters />
-        <AddEditPropertyPrompt />
-        <template v-if="propertiesStore.fetching">
-            <LoadingProperties />
-        </template>
-        <template v-else-if="!propertiesStore.properties.length">
-            <EmptyProperties />
-        </template>
+  <div class="container">
+    <h1 class="font-bold text-lg text-neutral-800 tracking-tight">
+      Properties
+    </h1>
+    <Filters />
+    <PropertiesActions />
+    <template v-if="propertiesStore.fetching">
+      <LoadingProperties />
+    </template>
+    <template v-else-if="!propertiesStore.properties.length">
+      <EmptyProperties />
+    </template>
 
-        <template v-if="propertiesStore.properties.length > 0 && !propertiesStore.fetching">
-            <TableProperties v-if="userStore.preference.listing === 'table'" :properties="propertiesStore.properties" />
-            <GridProperties
-v-else-if="userStore.preference.listing === 'grid'"
-                :properties="propertiesStore.properties" />
-        </template>
+    <template v-if="propertiesStore.properties.length > 0 && !propertiesStore.fetching">
+      <TableProperties v-if="userStore.preference.listing === 'table'" :properties="propertiesStore.properties" />
+      <GridProperties v-else-if="userStore.preference.listing === 'grid'" :properties="propertiesStore.properties" />
+    </template>
+    <PropertyModal />
 
-        <BottomProperties />
+    <div class="flex justify-between items-center my-4">
+      <Pagination />
     </div>
+  </div>
 </template>

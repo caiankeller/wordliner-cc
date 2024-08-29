@@ -1,35 +1,29 @@
 <script setup lang="ts">
-import { usePropertiesStore } from "stores/properties";
-import { useUserStore } from "stores/userStore";
+import { useUserStore } from "stores/user"
 
-const propertiesStore = usePropertiesStore();
-const userStore = useUserStore();
+const holdingsStore = useHoldingsStore()
+const userStore = useUserStore()
 
-// won't use nuxt's prerendering
-propertiesStore.getProperties();
+holdingsStore.getHoldings()
 </script>
 
 <template>
   <div class="container">
-    <h1 class="font-bold text-lg text-neutral-800 tracking-tight">
+    <h1 class="text-lg font-bold tracking-tight text-neutral-800">
       Properties
     </h1>
     <Filters />
-    <PropertiesActions />
-    <template v-if="propertiesStore.fetching">
-      <LoadingProperties />
-    </template>
-    <template v-else-if="!propertiesStore.properties.length">
-      <EmptyProperties />
+    <HoldingActions />
+
+    <LoadingHoldings v-if="holdingsStore.fetching" />
+    <EmptyHolding v-else-if="!holdingsStore.holdings.length" />
+
+    <template v-if="holdingsStore.holdings.length > 0 && !holdingsStore.fetching">
+      <TableHoldings v-if="userStore.preference.listing === 'table'" :holdings="holdingsStore.holdings" />
+      <GridHoldings v-else-if="userStore.preference.listing === 'grid'" :holdings="holdingsStore.holdings" />
     </template>
 
-    <template v-if="propertiesStore.properties.length > 0 && !propertiesStore.fetching">
-      <TableProperties v-if="userStore.preference.listing === 'table'" :properties="propertiesStore.properties" />
-      <GridProperties v-else-if="userStore.preference.listing === 'grid'" :properties="propertiesStore.properties" />
-    </template>
-    <PropertyModal />
-
-    <div class="flex justify-between items-center my-4">
+    <div class="flex items-center justify-between my-4">
       <Pagination />
     </div>
   </div>

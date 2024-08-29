@@ -1,6 +1,6 @@
 <template>
-  <nav class="container text-neutral-800 py-4 flex justify-between">
-    <span class="font-bold text-lg tracking-tighter text-indigo-500">
+  <nav class="container flex justify-between py-4 text-neutral-800">
+    <span class="text-lg font-bold tracking-tighter text-indigo-500">
       Immobilienbranche
     </span>
   </nav>

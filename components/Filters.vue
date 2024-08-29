@@ -1,7 +1,7 @@
 <template>
-  <div class="flex mt-4 flex-wrap gap-4">
+  <div class="flex flex-wrap gap-4 mt-4">
     <QueryInput />
-    <div class="flex gap-4 flex-wrap">
+    <div class="flex flex-wrap gap-4">
       <ToggleUserPreferenceListing />
       <Sort />
       <FilterByStatus />

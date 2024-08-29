@@ -1,14 +1,9 @@
-<!-- it comes directly from the currencyInput package documentation 
-https://dm4t2.github.io/vue-currency-input/guide.html#auto-emit -->
-
-<template>
-  <input ref="inputRef" type="text" inputmode="numeric" required
-    class="outline h-[32px] outline-1 w-full pl-2 text-neutral-800 outline-neutral-300 text-sm p-2 px-4 focus:outline-neutral-400 transition-all ease-out rounded-md">
-</template>
+<!-- it comes directly from the currencyInput package documentation, with just some changes
+  https://dm4t2.github.io/vue-currency-input/guide.html#auto-emit -->
 
 <script>
-import { watch } from "vue";
-import { useCurrencyInput } from "vue-currency-input";
+import { watch } from "vue"
+import { useCurrencyInput } from "vue-currency-input"
 
 export default {
   name: "CurrencyInput",
@@ -17,23 +12,33 @@ export default {
     options: Object,
   },
   setup(props) {
-    const { inputRef, setOptions, setValue } = useCurrencyInput(props.options);
+    const { inputRef, setOptions, setValue } = useCurrencyInput(props.options)
 
     watch(
       () => props.modelValue,
       (value) => {
-        setValue(value);
-      }
-    );
+        setValue(value)
+      },
+    )
 
     watch(
       () => props.options,
       (options) => {
-        setOptions(options);
-      }
-    );
+        setOptions(options)
+      },
+    )
 
-    return { inputRef };
+    return { inputRef }
   },
-};
+}
 </script>
+
+<template>
+  <input
+    ref="inputRef"
+    type="text"
+    inputmode="numeric"
+    required
+    class="h-[32px] outline outline-1 w-full pl-2 text-neutral-800 outline-neutral-300 text-sm p-2 px-4 focus:outline-neutral-400 transition-all ease-out rounded-md"
+  >
+</template>

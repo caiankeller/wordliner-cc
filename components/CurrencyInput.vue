@@ -2,8 +2,7 @@
   https://dm4t2.github.io/vue-currency-input/guide.html#auto-emit -->
 
 <script>
-import { watch } from "vue"
-import { useCurrencyInput } from "vue-currency-input"
+import { useCurrencyInput } from "vue-currency-input";
 
 export default {
   name: "CurrencyInput",
@@ -12,25 +11,25 @@ export default {
     options: Object,
   },
   setup(props) {
-    const { inputRef, setOptions, setValue } = useCurrencyInput(props.options)
+    const { inputRef, setOptions, setValue } = useCurrencyInput(props.options);
 
     watch(
       () => props.modelValue,
       (value) => {
-        setValue(value)
+        setValue(value);
       },
-    )
+    );
 
     watch(
       () => props.options,
       (options) => {
-        setOptions(options)
+        setOptions(options);
       },
-    )
+    );
 
-    return { inputRef }
+    return { inputRef };
   },
-}
+};
 </script>
 
 <template>

@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import type { IHolding } from "types"
-import { useTableStore } from "~/stores/table"
+import type { IHolding } from "types";
 
-const { holdings } = defineProps<{ holdings: IHolding[] }>()
+const { holdings } = defineProps<{ holdings: IHolding[] }>();
 
-const tableStore = useTableStore()
+const tableStore = useTableStore();
 </script>
 
 <template>
@@ -31,7 +30,7 @@ const tableStore = useTableStore()
               hidden: !state,
             }"
           >
-            {{ column.replaceAll("_", " ") }}
+            {{ $t(column) }}
           </th>
           <th class="px-4">
             <DropdownColumnSelect />

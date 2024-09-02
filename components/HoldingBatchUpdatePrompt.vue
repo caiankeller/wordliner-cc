@@ -1,43 +1,40 @@
 <script setup lang="ts">
-import { ArrowPathIcon } from "@heroicons/vue/16/solid"
-import type { TStatus, TTypeOfContract } from "types"
-import { ref } from "vue"
-import { useHoldingsStore } from "~/stores/holdings"
+import { ArrowPathIcon } from "@heroicons/vue/24/solid";
+import type { TStatus, TTypeOfContract } from "types";
 
-const { showModal } = defineProps<{ showModal: boolean }>()
-const emit = defineEmits<{ (e: "closeModal"): void }>()
+const { showModal } = defineProps<{ showModal: boolean }>();
+const emit = defineEmits<{ (e: "closeModal"): void }>();
 
-const holdingsStore = useHoldingsStore()
-const tableStore = useTableStore()
+const holdingsStore = useHoldingsStore();
+const tableStore = useTableStore();
 
-const isUpdating = ref(false)
+const isUpdating = ref(false);
 
 function handleModalClose() {
-  // wont let it close the modal if its updating yet
   if (isUpdating.value)
-    return
-  emit("closeModal")
+    return;
+  emit("closeModal");
 }
 
-const STATUSES: TStatus[] = ["available", "occupied", "sold"]
-const TYPE_OF_CONTRACTS: TTypeOfContract[] = ["renting", "selling"]
+const STATUSES: TStatus[] = ["available", "occupied", "sold"];
+const TYPE_OF_CONTRACTS: TTypeOfContract[] = ["renting", "selling"];
 
 const batchUpdate = ref({
   status: STATUSES[0],
   typeOfContract: TYPE_OF_CONTRACTS[0],
   shouldHide: false,
-})
+});
 
 async function handleUpdate() {
-  isUpdating.value = true
+  isUpdating.value = true;
   await holdingsStore.updateHoldings(
     [...tableStore.selectedHoldings],
     batchUpdate.value.status,
     batchUpdate.value.typeOfContract,
     batchUpdate.value.shouldHide,
-  )
-  emit("closeModal")
-  isUpdating.value = false
+  );
+  emit("closeModal");
+  isUpdating.value = false;
 }
 </script>
 
@@ -56,41 +53,41 @@ async function handleUpdate() {
         class="bg-white p-4 z-10 max-w-[600px] absolute mx-auto my-auto top-0 left-0 right-0 bottom-0 w-full rounded-xl shadow-lg h-fit"
       >
         <p class="font-semibold text-neutral-800">
-          Batch properties update
+          {{ $t('batchUpdateProperties') }}
         </p>
         <div class="grid grid-cols-2 gap-4 my-8">
           <label class="col-span-2 md:col-span-1">
-            <span class="text-sm font-medium text-neutral-800">Status</span>
+            <span class="text-sm font-medium text-neutral-800">{{ $t('statu') }}</span>
             <select
               v-model="batchUpdate.status"
               class="w-full py-2 pl-2 text-sm transition-shadow bg-white border-r-8 border-transparent rounded-md text-neutral-800 overflow-clip outline outline-1 outline-neutral-300 focus:outline-neutral-400"
             >
-              <option v-for="status in STATUSES" :key="status">
-                {{ status }}
+              <option v-for="status in STATUSES" :key="status" :value="status">
+                {{ $t(status) }}
               </option>
             </select>
           </label>
           <label class="col-span-2 md:col-span-1">
-            <span class="text-sm font-medium text-neutral-800">Type of Contract</span>
+            <span class="text-sm font-medium text-neutral-800">{{ $t('typeOfContract') }}</span>
             <select
               v-model="batchUpdate.typeOfContract"
               class="w-full py-2 pl-2 text-sm transition-shadow bg-white border-r-8 border-transparent rounded-md text-neutral-800 overflow-clip outline outline-1 outline-neutral-300 focus:outline-neutral-400"
             >
-              <option v-for="type in TYPE_OF_CONTRACTS" :key="type">
-                {{ type }}
+              <option v-for="type in TYPE_OF_CONTRACTS" :key="type" :value="type">
+                {{ $t(type) }}
               </option>
             </select>
           </label>
           <div class="col-span-2 md:col-span-1" />
           <label class="col-span-2 md:col-span-1">
-            <span class="text-sm font-medium text-neutral-800">Visibility</span>
+            <span class="text-sm font-medium text-neutral-800">{{ $t('visibility') }}</span>
             <div class="flex gap-2 items-center h-[32px]">
               <input
                 v-model="batchUpdate.shouldHide"
                 type="checkbox"
                 class="w-4 h-4 bg-gray-100 accent-indigo-500 border-neutral-300 rounded-xl focus:ring-indigo-500 focus:ring-2"
               >
-              <span class="text-xs font-medium text-neutral-800">Hide from users</span>
+              <span class="text-xs font-medium text-neutral-800">{{ $t('hideFromUsers') }}</span>
             </div>
           </label>
         </div>
@@ -101,7 +98,7 @@ async function handleUpdate() {
             :disabled="isUpdating"
             @click="handleModalClose"
           >
-            Cancel
+            {{ $t('cancel') }}
           </button>
 
           <button
@@ -111,10 +108,10 @@ async function handleUpdate() {
             @click="handleUpdate"
           >
             <template v-if="isUpdating">
-              <ArrowPathIcon class="size-4 animate-spin" />Updating
+              <ArrowPathIcon class="size-4 animate-spin" />{{ $t("updating") }}
             </template>
             <template v-else>
-              Confirm update
+              {{ $t("confirmUpdate") }}
             </template>
           </button>
         </div>

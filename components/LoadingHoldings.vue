@@ -1,3 +1,4 @@
 <template>
-  <div class="w-full sm:h-[609px] h-[617px] bg-neutral-200 animate-pulse mt-4 rounded-xl" />
+  <div class="w-full h-[609px] bg-neutral-200 animate-pulse mt-4 rounded-xl" />
 </template>
+function

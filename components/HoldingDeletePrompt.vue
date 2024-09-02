@@ -1,29 +1,25 @@
 <script setup lang="ts">
-import { ArrowPathIcon } from "@heroicons/vue/16/solid"
-import { useTableStore } from "stores/table"
-import { ref } from "vue"
-import { useHoldingsStore } from "stores/holdings"
+import { ArrowPathIcon } from "@heroicons/vue/24/solid";
 
-const { showModal } = defineProps<{ showModal: boolean }>()
-const emit = defineEmits<{ (e: "closeModal"): void }>() // im not quite sure if im doing it right but it does work ✨
+const { showModal } = defineProps<{ showModal: boolean }>();
+const emit = defineEmits<{ (e: "closeModal"): void }>(); // im not quite sure if im doing it right but it does work ✨
 
-const holdingsStore = useHoldingsStore()
-const tableStore = useTableStore()
+const holdingsStore = useHoldingsStore();
+const tableStore = useTableStore();
 
-const isDeleting = ref(false)
+const isDeleting = ref(false);
 
 async function handleDelete() {
-  isDeleting.value = true
-  await holdingsStore.deleteHoldings([...tableStore.selectedHoldings])
-  emit("closeModal")
-  isDeleting.value = false
+  isDeleting.value = true;
+  await holdingsStore.deleteHoldings([...tableStore.selectedHoldings]);
+  emit("closeModal");
+  isDeleting.value = false;
 }
 
 function handleModalClose() {
-  // wont let it close the modal if its deleting yet
   if (isDeleting.value)
-    return
-  emit("closeModal")
+    return;
+  emit("closeModal");
 }
 </script>
 
@@ -42,11 +38,11 @@ function handleModalClose() {
         class="bg-white p-4 z-10 max-w-[350px] absolute mx-auto my-auto top-0 left-0 right-0 bottom-0 w-full rounded-xl shadow-lg h-fit"
       >
         <p class="font-semibold text-neutral-800">
-          Are you sure you want to delete?
+          {{ $t('areYouSureDelete') }}
         </p>
         <div class="my-8 text-center">
           <span class="text-sm font-medium">
-            {{ tableStore.selectedHoldings.size }} items selected
+            {{ tableStore.selectedHoldings.size }} {{ $t('XItemsSelected') }}
           </span>
         </div>
         <div class="flex justify-end gap-4 mt-4">
@@ -56,7 +52,7 @@ function handleModalClose() {
             :disabled="isDeleting"
             @click="handleModalClose"
           >
-            Cancel
+            {{ $t('cancel') }}
           </button>
 
           <button
@@ -66,10 +62,10 @@ function handleModalClose() {
             @click="handleDelete"
           >
             <template v-if="isDeleting">
-              <ArrowPathIcon class="size-4 animate-spin" />Deleting
+              <ArrowPathIcon class="size-4 animate-spin" />{{ $t('deleting') }}
             </template>
             <template v-else>
-              Confirm delete
+              {{ $t('confirmDelete') }}
             </template>
           </button>
         </div>

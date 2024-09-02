@@ -1,17 +1,11 @@
 <script setup lang="ts">
-import {
-  PencilSquareIcon,
-  PlusCircleIcon,
-  TrashIcon,
-} from "@heroicons/vue/24/solid"
-import { useModalHolding } from "stores/modalHolding"
-import { useTableStore } from "stores/table.js"
+import { PencilSquareIcon, PlusCircleIcon, TrashIcon } from "@heroicons/vue/24/solid";
 
-const modalHolding = useModalHolding()
-const tableStore = useTableStore()
+const editingHoldingStore = useEditingHoldingStore();
+const tableStore = useTableStore();
 
-const showDeleteModal = ref(false)
-const showUpdateModal = ref(false)
+const showDeleteModal = ref(false);
+const showUpdateModal = ref(false);
 </script>
 
 <template>
@@ -19,9 +13,9 @@ const showUpdateModal = ref(false)
     <button
       type="button"
       class="bg-indigo-500 active:scale-[.97] text-white transition-all items-center text-xs z-[1] font-semibold flex gap-2 px-4 py-2 rounded-full"
-      @click="modalHolding.newEditingHolding()"
+      @click="editingHoldingStore.newEditingHolding()"
     >
-      <PlusCircleIcon class="size-4" /> Add property
+      <PlusCircleIcon class="size-4" /> {{ $t('addProperty') }}
     </button>
     <transition name="button-mount">
       <div
@@ -33,7 +27,7 @@ const showUpdateModal = ref(false)
           class="bg-amber-500 active:scale-[.97] text-white transition-all items-center text-xs font-semibold flex gap-2 py-2 px-4 rounded-full disabled:bg-neutral-400"
           @click="showUpdateModal = true"
         >
-          <PencilSquareIcon class="size-4" /> batch update
+          <PencilSquareIcon class="size-4" /> {{ $t('batchUpdate') }}
         </button>
         <button
           v-if="tableStore.selectedHoldings.size > 0"
@@ -41,7 +35,7 @@ const showUpdateModal = ref(false)
           class="bg-rose-500 active:scale-[.97] text-white transition-all items-center text-xs font-semibold flex gap-2 py-2 px-4 rounded-full disabled:bg-neutral-400"
           @click="showDeleteModal = true"
         >
-          <TrashIcon class="size-4" /> Delete
+          <TrashIcon class="size-4" /> {{ $t('delete') }}
         </button>
       </div>
     </transition>

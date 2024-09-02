@@ -1,20 +1,23 @@
 <script setup lang="ts">
-import type { TStatus } from "types"
-import { computed } from "vue"
+import type { TStatus } from "types";
 
-const { status } = defineProps<{ status: TStatus }>()
+const { status } = defineProps<{ status: TStatus }>();
 
+// each class for each status
 const BADGE_CLASSES: Record<TStatus, string> = {
-  available:
-    "text-xs py-1 bg-indigo-50 rounded-full text-indigo-500 font-bold px-2",
-  sold: "text-xs py-1 bg-rose-50 rounded-full text-rose-500 font-bold px-2",
-  occupied:
-    "text-xs py-1 bg-yellow-50 rounded-full text-yellow-500 font-bold px-2",
-}
+  available: "bg-indigo-50 text-indigo-500",
+  sold: "bg-rose-50 text-rose-500",
+  occupied: "bg-yellow-50 text-yellow-500",
+};
 
-const badgeClass = computed(() => BADGE_CLASSES[status] || "")
+const badgeClass = computed(() => BADGE_CLASSES[status] || "");
 </script>
 
 <template>
-  <span :class="badgeClass">{{ status }}</span>
+  <span
+    :class="badgeClass"
+    class="px-2 py-1 text-xs font-bold lowercase rounded-full"
+  >
+    {{ $t(status) }}
+  </span>
 </template>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { IHolding } from "types"
+import type { IHolding } from "types";
 
-const { holdings } = defineProps<{ holdings: IHolding[] }>()
+const { holdings } = defineProps<{ holdings: IHolding[] }>();
 </script>
 
 <template>

@@ -1,16 +1,14 @@
 <script setup lang="ts">
-import { useUserStore } from "stores/user"
+const holdingsStore = useHoldingsStore();
+const userStore = useUserStore();
 
-const holdingsStore = useHoldingsStore()
-const userStore = useUserStore()
-
-holdingsStore.getHoldings()
+holdingsStore.getHoldings();
 </script>
 
 <template>
   <div class="container">
     <h1 class="text-lg font-bold tracking-tight text-neutral-800">
-      Properties
+      {{ $t('properties') }}
     </h1>
     <Filters />
     <HoldingActions />

@@ -1,50 +1,50 @@
-import { defineStore } from "pinia"
-import { computed, ref } from "vue"
-import type { IHolding } from "types"
+import { defineStore } from "pinia";
+import type { IHolding } from "types";
 
-import { useHoldingsStore } from "stores/holdings"
+import { useHoldingsStore } from "stores/holdings";
 
 export const useTableStore = defineStore("table", () => {
-  const holdingsStore = useHoldingsStore()
+  const holdingsStore = useHoldingsStore();
 
-  const selectedHoldings = ref<Set<IHolding>>(new Set())
+  const selectedHoldings = ref<Set<IHolding>>(new Set());
+
   const visibleColumns = ref<Record<keyof IHolding, boolean>>({
     title: true,
-    address: true,
+    address: false,
     description: false,
     status: true,
     type_of_contract: true,
-    id: false,
-    hidden: false,
+    id: true,
+    hidden: true,
     price: true,
-  })
+  });
 
   const selectVisibleColumns = (column: keyof IHolding) => {
     visibleColumns.value = {
       ...visibleColumns.value,
       [column]: !visibleColumns.value[column],
-    }
-  }
+    };
+  };
 
   const isAllChecked = computed(
     () => selectedHoldings.value.size === holdingsStore.holdings.length,
-  )
+  );
 
   const selectAllHoldings = () => {
     if (isAllChecked.value)
-      selectedHoldings.value.clear()
-    else holdingsStore.holdings.map(hd => selectedHoldings.value.add(hd))
-  }
+      selectedHoldings.value.clear();
+    else holdingsStore.holdings.map(hd => selectedHoldings.value.add(hd));
+  };
 
   const unselectAllHoldings = () => {
-    selectedHoldings.value.clear()
-  }
+    selectedHoldings.value.clear();
+  };
 
   const selectHoldings = (holding: IHolding) => {
     if (selectedHoldings.value.has(holding))
-      selectedHoldings.value.delete(holding)
-    else selectedHoldings.value.add(holding)
-  }
+      selectedHoldings.value.delete(holding);
+    else selectedHoldings.value.add(holding);
+  };
 
   return {
     selectAllHoldings,
@@ -54,5 +54,5 @@ export const useTableStore = defineStore("table", () => {
     unselectAllHoldings,
     visibleColumns,
     selectVisibleColumns,
-  }
-})
+  };
+});

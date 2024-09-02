@@ -2,19 +2,18 @@
      so i focused on bringing features to the table option -->
 
 <script setup lang="ts">
-import type { IHolding } from "types"
-import currencyFormat from "utils/formatCurrency"
-import { useModalHolding } from "~/stores/modalHolding"
+import type { IHolding } from "types";
+import currencyFormat from "utils/formatCurrency";
 
-const { holding } = defineProps<{ holding: IHolding }>()
+const { holding } = defineProps<{ holding: IHolding }>();
 
-const modalHolding = useModalHolding()
+const editingHoldingStore = useEditingHoldingStore();
 </script>
 
 <template>
   <li
     class="rounded-xl hover:cursor-pointer space-y-2 p-4 group active:scale-[0.97] hover:shadow-md outline outline-1 outline-neutral-300 hover:outline-neutral-500 lg:col-span-3 col-span-6 transition-all"
-    @click="modalHolding.editHolding(holding)"
+    @click="editingHoldingStore.editHolding(holding)"
   >
     <Badge :status="holding.status" />
     <div class="flex justify-between">
@@ -31,7 +30,7 @@ const modalHolding = useModalHolding()
         class="mt-auto text-xs font-semibold text-neutral-800"
       >
         {{ currencyFormat(holding.price) }}
-        monthly
+        {{ $t('monthly') }}
       </span>
       <span
         v-if="holding.type_of_contract === 'selling'"

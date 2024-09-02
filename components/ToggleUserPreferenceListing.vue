@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { QueueListIcon, Squares2X2Icon } from "@heroicons/vue/24/solid"
-import { useUserStore } from "stores/user"
+import { QueueListIcon, Squares2X2Icon } from "@heroicons/vue/24/solid";
 
-const userStore = useUserStore()
+const userStore = useUserStore();
 </script>
 
 <template>
@@ -17,7 +16,7 @@ const userStore = useUserStore()
     >
       <QueueListIcon class="size-4" />
       <!-- accessibility sr-only appear for screen readers, good to keep those for buttons that only contain icon -->
-      <span class="sr-only">Table</span>
+      <span class="sr-only">{{ $t('table') }}</span>
     </button>
     <button
       type="button"
@@ -28,7 +27,7 @@ const userStore = useUserStore()
       @click="userStore.updateUserPreferenceListing('grid')"
     >
       <Squares2X2Icon class="size-4" />
-      <span class="sr-only">Grid</span>
+      <span class="sr-only">{{ $t('table') }}</span>
     </button>
   </div>
 </template>

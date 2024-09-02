@@ -1,6 +1,6 @@
 ![immobilienbranche](./.repository/immobilienbranche.png)
 
-[DEMO]('https://wordliner.vercel.app')
+## [Demo](https://wordliner.vercel.app)
 
 ## Installation
 
@@ -34,11 +34,11 @@ This project showcases a streamlined Nuxt.js development process, featuring orga
 
 To enhance user experience and productivity, I implemented table customization features. Users can:
 
--Order by different attributes
+- Order by different attributes
 
--Filter by status
+- Filter by status
 
--Hide and show columns for better visualization
+- Hide and show columns for better visualization
 
 ### Localization
 
